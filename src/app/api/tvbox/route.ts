@@ -16,5 +16,16 @@ export async function GET() {
     filterable: 1
   }));
 
-  return NextResponse.json({ sites });
+return NextResponse.json({
+  sites: [...你的资源站列表...],
+  parses: [
+    {
+      name: "默认解析",
+      type: 3,
+      url: "https://jx.jsonplayer.com/player/?url="
+    }
+  ],
+  rules: {},
+  flags: []
+});
 }
