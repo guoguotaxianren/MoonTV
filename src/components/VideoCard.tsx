@@ -277,21 +277,13 @@ export default function VideoCard({
         {/* 骨架屏 */}
         {!isLoading && <ImagePlaceholder aspectRatio='aspect-[2/3]' />}
         {/* 图片 */}
-        {/* <Image
+       <Image
           src={processImageUrl(actualPoster)}
           alt={actualTitle}
           fill
           className='object-cover'
           referrerPolicy='no-referrer'
           onLoadingComplete={() => setIsLoading(true)}
-        />*/}
-
-        <img
-          src={processImageUrl(actualPoster)} // 继续使用你已开启的代理逻辑
-          alt={actualTitle}
-          className='absolute inset-0 h-full w-full object-cover' // 保持原有样式
-          referrerPolicy='no-referrer' // 绕过基础防盗链
-          onLoad={() => setIsLoading(true)} // 触发加载完成回调
         />
 
         {/* 悬浮遮罩 */}
