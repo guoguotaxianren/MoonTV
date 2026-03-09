@@ -287,12 +287,12 @@ export default function VideoCard({
         />*/}
 
         <img
-  src={processImageUrl(actualPoster)} // 继续使用你已开启的代理逻辑
-  alt={actualTitle}
-  className='absolute inset-0 h-full w-full object-cover' // 保持原有样式
-  referrerPolicy='no-referrer' // 绕过基础防盗链
-  onLoad={() => setIsLoading(true)} // 触发加载完成回调
-/>
+          src={processImageUrl(actualPoster)} // 继续使用你已开启的代理逻辑
+          alt={actualTitle}
+          className='absolute inset-0 h-full w-full object-cover' // 保持原有样式
+          referrerPolicy='no-referrer' // 绕过基础防盗链
+          onLoad={() => setIsLoading(true)} // 触发加载完成回调
+        />
 
         {/* 悬浮遮罩 */}
         <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100' />
