@@ -22,11 +22,15 @@ export function getImageProxyUrl(): string | null {
   }
 
   // 如果未设置，则使用全局对象
-  const serverImageProxy = (window as any).RUNTIME_CONFIG?.IMAGE_PROXY;
-  return serverImageProxy && serverImageProxy.trim()
-    ? serverImageProxy.trim()
-    : null;
-}
+// 将这段代码：
+//const serverImageProxy = (window as any).RUNTIME_CONFIG?.IMAGE_PROXY;
+//return serverImageProxy && serverImageProxy.trim() ? serverImageProxy.trim() : null;
+
+// 修改为：
+const serverImageProxy = (window as any).RUNTIME_CONFIG?.IMAGE_PROXY;
+return serverImageProxy && serverImageProxy.trim() 
+    ? serverImageProxy.trim() 
+    : "https://images.weserv.nl/?url="; // 强制给一个默认代理
 
 /**
  * 处理图片 URL，如果设置了图片代理则使用代理
